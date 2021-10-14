@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var price: UILabel!
     
+    @IBOutlet weak var nexBike: UIButton!
+    
     var number:Int = 0
     var arrayOfPictures: [UIImage] = []
     
@@ -23,6 +25,9 @@ class ViewController: UIViewController {
         
         firstPlaceOfPicture()
         createBikeCatalog()
+        nexBike.addShadow()
+        nexBike.addGradientWithColor(color: .white)
+        nexBike.corner()
     }
     
     func firstPlaceOfPicture() {

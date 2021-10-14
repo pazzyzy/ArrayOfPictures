@@ -28,12 +28,15 @@
                                         <rect key="frame" x="41" y="556" width="240" height="307"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxf-jk-NZY">
-                                        <rect key="frame" x="162" y="205" width="102" height="42"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxf-jk-NZY">
+                                        <rect key="frame" x="146" y="205" width="135" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Next Bike"/>
+                                        <state key="normal" title="   Next Bike   ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="actionNextImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rIL-BP-dit"/>
                                         </connections>
@@ -71,6 +74,7 @@
                     <connections>
                         <outlet property="containerView" destination="mAm-T9-w13" id="nmf-tI-Hyo"/>
                         <outlet property="image" destination="W4r-bK-sts" id="Qal-qP-xIH"/>
+                        <outlet property="nexBike" destination="vxf-jk-NZY" id="qG3-AR-SHJ"/>
                         <outlet property="price" destination="fY3-hK-cqQ" id="oyZ-3i-DXz"/>
                     </connections>
                 </viewController>

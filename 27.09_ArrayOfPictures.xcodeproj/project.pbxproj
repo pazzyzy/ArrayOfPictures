@@ -31,6 +31,7 @@
 		C605A5102705076700138B6A /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C605A5022705076700138B6A /* 11.jpg */; };
 		C605A5112705076700138B6A /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C605A5032705076700138B6A /* 6.jpg */; };
 		C605A5122705076700138B6A /* 13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C605A5042705076700138B6A /* 13.jpg */; };
+		C630D1E62712F3730092D4DA /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C630D1E52712F3730092D4DA /* UIButton+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		C605A5022705076700138B6A /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = SOURCE_ROOT; };
 		C605A5032705076700138B6A /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = SOURCE_ROOT; };
 		C605A5042705076700138B6A /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13.jpg; sourceTree = SOURCE_ROOT; };
+		C630D1E52712F3730092D4DA /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		C605A4C52704DE4100138B6A = {
 			isa = PBXGroup;
 			children = (
+				C630D1E42712F2F30092D4DA /* Extensions */,
 				C605A4D02704DE4100138B6A /* 27.09_ArrayOfPictures */,
 				C605A4CF2704DE4100138B6A /* Products */,
 			);
@@ -119,6 +122,14 @@
 				C605A5012705076700138B6A /* 15.jpg */,
 			);
 			path = 27.09_ArrayOfPictures;
+			sourceTree = "<group>";
+		};
+		C630D1E42712F2F30092D4DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C630D1E52712F3730092D4DA /* UIButton+extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C605A4D62704DE4100138B6A /* ViewController.swift in Sources */,
+				C630D1E62712F3730092D4DA /* UIButton+extension.swift in Sources */,
 				C605A4D22704DE4100138B6A /* AppDelegate.swift in Sources */,
 				C605A4D42704DE4100138B6A /* SceneDelegate.swift in Sources */,
 			);
