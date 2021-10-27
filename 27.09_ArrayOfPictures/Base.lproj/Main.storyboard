@@ -16,22 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mAm-T9-w13">
-                                <rect key="frame" x="0.0" y="44" width="428" height="882"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAm-T9-w13">
+                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4r-bK-sts">
-                                        <rect key="frame" x="67" y="291" width="293" height="182"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W4r-bK-sts">
+                                        <rect key="frame" x="8" y="281.66666666666669" width="412" height="285.00000000000006"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="285" id="AJO-0g-hiA"/>
+                                        </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homer_thinking.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WFb-L6-P7P">
-                                        <rect key="frame" x="41" y="556" width="240" height="307"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="642334_bike-discount-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="IG8-Mn-uHf">
+                                        <rect key="frame" x="67.666666666666686" y="71" width="293" height="79"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="79" id="GHV-C8-TsD"/>
+                                            <constraint firstAttribute="width" constant="293" id="T7u-xw-tGW"/>
+                                        </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxf-jk-NZY">
-                                        <rect key="frame" x="146" y="205" width="135" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afo-dI-mKV">
+                                        <rect key="frame" x="8" y="596" width="412" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxf-jk-NZY">
+                                        <rect key="frame" x="147" y="177" width="134.99999999999997" height="42"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="135" id="EmW-ZD-bOO"/>
+                                            <constraint firstAttribute="height" constant="42" id="pG0-y8-2ef"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="   Next Bike   ">
@@ -41,41 +53,38 @@
                                             <action selector="actionNextImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rIL-BP-dit"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="642334_bike-discount-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="IG8-Mn-uHf">
-                                        <rect key="frame" x="67" y="0.0" width="293" height="197"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-Lm-0Ge">
-                                        <rect key="frame" x="305" y="565.33333333333337" width="15" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fY3-hK-cqQ">
-                                        <rect key="frame" x="232" y="565.33333333333337" width="73" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="message" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VMF-Ma-b7L">
-                                        <rect key="frame" x="188" y="540.33333333333337" width="202" height="88"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="W4r-bK-sts" firstAttribute="leading" secondItem="mAm-T9-w13" secondAttribute="leading" constant="8" id="1HM-Pw-2g9"/>
+                                    <constraint firstItem="IG8-Mn-uHf" firstAttribute="centerX" secondItem="mAm-T9-w13" secondAttribute="centerX" id="BLq-gk-8AB"/>
+                                    <constraint firstItem="W4r-bK-sts" firstAttribute="centerY" secondItem="mAm-T9-w13" secondAttribute="centerY" id="Eth-dR-e2K"/>
+                                    <constraint firstAttribute="trailing" secondItem="Afo-dI-mKV" secondAttribute="trailing" constant="8" id="LO6-WG-8Iz"/>
+                                    <constraint firstItem="W4r-bK-sts" firstAttribute="centerX" secondItem="mAm-T9-w13" secondAttribute="centerX" id="Lha-h6-H0Q"/>
+                                    <constraint firstItem="Afo-dI-mKV" firstAttribute="centerX" secondItem="mAm-T9-w13" secondAttribute="centerX" id="WEE-io-ZMM"/>
+                                    <constraint firstItem="Afo-dI-mKV" firstAttribute="top" secondItem="W4r-bK-sts" secondAttribute="bottom" constant="29.333333333333258" id="dos-Zg-lrY"/>
+                                    <constraint firstItem="vxf-jk-NZY" firstAttribute="centerX" secondItem="mAm-T9-w13" secondAttribute="centerX" id="dqa-KK-L9b"/>
+                                    <constraint firstAttribute="trailing" secondItem="W4r-bK-sts" secondAttribute="trailing" constant="8" id="eXU-nN-kqQ"/>
+                                    <constraint firstItem="IG8-Mn-uHf" firstAttribute="top" secondItem="mAm-T9-w13" secondAttribute="top" constant="71" id="fEd-d5-lmo"/>
+                                    <constraint firstItem="Afo-dI-mKV" firstAttribute="leading" secondItem="mAm-T9-w13" secondAttribute="leading" constant="8" id="gXe-aE-mu4"/>
+                                    <constraint firstItem="vxf-jk-NZY" firstAttribute="top" secondItem="IG8-Mn-uHf" secondAttribute="bottom" constant="27" id="nZS-vd-etT"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mAm-T9-w13" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BGw-Vp-kI8"/>
+                            <constraint firstItem="mAm-T9-w13" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="FmV-Vg-Qnx"/>
+                            <constraint firstItem="mAm-T9-w13" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Jdb-pq-xdu"/>
+                            <constraint firstItem="mAm-T9-w13" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="eZ0-IE-trL"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="constrainsForContainerVierw" destination="Eth-dR-e2K" id="lPT-aQ-d9q"/>
                         <outlet property="containerView" destination="mAm-T9-w13" id="nmf-tI-Hyo"/>
                         <outlet property="image" destination="W4r-bK-sts" id="Qal-qP-xIH"/>
                         <outlet property="nexBike" destination="vxf-jk-NZY" id="qG3-AR-SHJ"/>
-                        <outlet property="price" destination="fY3-hK-cqQ" id="oyZ-3i-DXz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,8 +94,6 @@
     </scenes>
     <resources>
         <image name="642334_bike-discount-logo.png" width="360" height="48"/>
-        <image name="homer_thinking.jpg" width="300" height="518"/>
-        <image name="message" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

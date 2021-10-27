@@ -43,24 +43,24 @@
 		C605A4DA2704DE4300138B6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C605A4DD2704DE4300138B6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C605A4DF2704DE4300138B6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C605A4E52704E28400138B6A /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4EB2705023700138B6A /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4F32705057A00138B6A /* homer_thinking.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = homer_thinking.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4F5270505D900138B6A /* 642334_bike-discount-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "642334_bike-discount-logo.png"; sourceTree = SOURCE_ROOT; };
-		C605A4F72705076600138B6A /* 14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 14.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4F82705076600138B6A /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4F92705076600138B6A /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4FA2705076600138B6A /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4FB2705076600138B6A /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4FC2705076600138B6A /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4FD2705076600138B6A /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4FE2705076600138B6A /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = SOURCE_ROOT; };
-		C605A4FF2705076600138B6A /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = SOURCE_ROOT; };
-		C605A5002705076600138B6A /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = SOURCE_ROOT; };
-		C605A5012705076700138B6A /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15.jpg; sourceTree = SOURCE_ROOT; };
-		C605A5022705076700138B6A /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = SOURCE_ROOT; };
-		C605A5032705076700138B6A /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = SOURCE_ROOT; };
-		C605A5042705076700138B6A /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4E52704E28400138B6A /* cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat.jpg; path = Images/cat.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4EB2705023700138B6A /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = Images/1.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4F32705057A00138B6A /* homer_thinking.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = homer_thinking.jpg; path = Images/homer_thinking.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4F5270505D900138B6A /* 642334_bike-discount-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "642334_bike-discount-logo.png"; path = "Images/642334_bike-discount-logo.png"; sourceTree = SOURCE_ROOT; };
+		C605A4F72705076600138B6A /* 14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 14.jpg; path = Images/14.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4F82705076600138B6A /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.jpg; path = Images/5.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4F92705076600138B6A /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = Images/2.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4FA2705076600138B6A /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.jpg; path = Images/4.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4FB2705076600138B6A /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 12.jpg; path = Images/12.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4FC2705076600138B6A /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 10.jpg; path = Images/10.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4FD2705076600138B6A /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9.jpg; path = Images/9.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4FE2705076600138B6A /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = Images/3.jpg; sourceTree = SOURCE_ROOT; };
+		C605A4FF2705076600138B6A /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 8.jpg; path = Images/8.jpg; sourceTree = SOURCE_ROOT; };
+		C605A5002705076600138B6A /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 7.jpg; path = Images/7.jpg; sourceTree = SOURCE_ROOT; };
+		C605A5012705076700138B6A /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 15.jpg; path = Images/15.jpg; sourceTree = SOURCE_ROOT; };
+		C605A5022705076700138B6A /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 11.jpg; path = Images/11.jpg; sourceTree = SOURCE_ROOT; };
+		C605A5032705076700138B6A /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.jpg; path = Images/6.jpg; sourceTree = SOURCE_ROOT; };
+		C605A5042705076700138B6A /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 13.jpg; path = Images/13.jpg; sourceTree = SOURCE_ROOT; };
 		C630D1E52712F3730092D4DA /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +78,7 @@
 		C605A4C52704DE4100138B6A = {
 			isa = PBXGroup;
 			children = (
+				C60D4F9C272816E800F144D6 /* Images */,
 				C630D1E42712F2F30092D4DA /* Extensions */,
 				C605A4D02704DE4100138B6A /* 27.09_ArrayOfPictures */,
 				C605A4CF2704DE4100138B6A /* Products */,
@@ -102,8 +103,13 @@
 				C605A4DA2704DE4300138B6A /* Assets.xcassets */,
 				C605A4DC2704DE4300138B6A /* LaunchScreen.storyboard */,
 				C605A4DF2704DE4300138B6A /* Info.plist */,
-				C605A4F32705057A00138B6A /* homer_thinking.jpg */,
-				C605A4F5270505D900138B6A /* 642334_bike-discount-logo.png */,
+			);
+			path = 27.09_ArrayOfPictures;
+			sourceTree = "<group>";
+		};
+		C60D4F9C272816E800F144D6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
 				C605A4E52704E28400138B6A /* cat.jpg */,
 				C605A4EB2705023700138B6A /* 1.jpg */,
 				C605A4F92705076600138B6A /* 2.jpg */,
@@ -120,8 +126,10 @@
 				C605A5042705076700138B6A /* 13.jpg */,
 				C605A4F72705076600138B6A /* 14.jpg */,
 				C605A5012705076700138B6A /* 15.jpg */,
+				C605A4F32705057A00138B6A /* homer_thinking.jpg */,
+				C605A4F5270505D900138B6A /* 642334_bike-discount-logo.png */,
 			);
-			path = 27.09_ArrayOfPictures;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		C630D1E42712F2F30092D4DA /* Extensions */ = {

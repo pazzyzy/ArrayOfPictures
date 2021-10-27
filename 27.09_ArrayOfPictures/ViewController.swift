@@ -10,24 +10,29 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var image: UIImageView!
-    
     @IBOutlet weak var containerView: UIView!
-    
-    @IBOutlet weak var price: UILabel!
-    
     @IBOutlet weak var nexBike: UIButton!
+    
+    @IBOutlet weak var constrainsForContainerVierw: NSLayoutConstraint!
     
     var number:Int = 0
     var arrayOfPictures: [UIImage] = []
-    
+    let duration = 0.7
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerForKeyboardNotifications()
         
         firstPlaceOfPicture()
         createBikeCatalog()
         nexBike.addShadow()
         nexBike.addGradientWithColor(color: .white)
         nexBike.corner()
+    }
+    
+    deinit {
+        removeKeyboardNotification()
     }
     
     func firstPlaceOfPicture() {
@@ -40,29 +45,56 @@ class ViewController: UIViewController {
     }
     
     @IBAction func actionNextImage(_ sender: Any) {
-        
-        price.text = String(Int.random(in: 300...999))
-        
+                
         if number == (arrayOfPictures.count - 1) {
             number = 0
             print("Поехали сначала!")
         }
-        
-        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn) {
+        animateUIView()
+    }
+    
+    func animateUIView() {
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseIn) {
             // перемещаем картинку за правую границу экрана
-            self.image.frame = CGRect(x: CGFloat((self.containerView.frame.width) / 2 + 200), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
+            self.image.frame = CGRect(x: CGFloat((self.containerView.frame.width)), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
         } completion: { isFinished in
             // после завершения меняем начинку вьюхи другой картинкой
             self.number += 1
             self.image.image = self.arrayOfPictures[self.number]
             //меняем месторасположения картинка (за левую границу экрана)
-            self.image.frame = CGRect(x: CGFloat((self.containerView.frame.width) / 2 - 500), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
+            self.image.frame = CGRect(x: CGFloat(0 - self.image.frame.width), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
             // перемещаем новую картинку в центр
-            UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut) {
+            UIView.animate(withDuration: self.duration, delay: 0, options: .curveEaseOut) {
                 self.image.frame = CGRect(x: CGFloat((self.containerView.frame.width) / 2 - (self.image.frame.width / 2)), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
             }
         }
     }
+    // MARK: -  work with keyboard
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
     
+    func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+
+    
+    @objc func kbWillShow(_ notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+            return }
+        let keyBoardScreenEndFrame = keyboardValue.cgRectValue
+        let keyBoardViewEndFrame = view.convert(keyBoardScreenEndFrame, from: view.window)
+        print("kbWillShow")
+        print(keyBoardViewEndFrame.height)
+//        containerView.frame = CGRect(x: containerView.frame.minX, y: (containerView.frame.minY - keyBoardViewEndFrame.height), width: containerView.frame.width, height: containerView.frame.height)
+        
+        constrainsForContainerVierw.constant -= keyBoardViewEndFrame.height
+        }
+    
+    @objc func kbWillHide(_ notification: Notification) {
+        print("kbWillHide")
+    }
 }
 
