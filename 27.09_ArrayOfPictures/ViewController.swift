@@ -13,44 +13,94 @@ class ViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nexBike: UIButton!
     
-    @IBOutlet weak var constrainsForContainerVierw: NSLayoutConstraint!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var likeFlag: UILabel!
     
     var number:Int = 0
     var arrayOfPictures: [UIImage] = []
+    var arrayOfComents: [String] = []
+    
+    var tupleArray: [(picture: UIImage, coment: String, like: Bool)] = []
+    
     let duration = 0.7
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        registerForKeyboardNotifications()
-        
-        firstPlaceOfPicture()
-        createBikeCatalog()
-        nexBike.addShadow()
-        nexBike.addGradientWithColor(color: .white)
-        nexBike.corner()
+        settings()
     }
     
     deinit {
         removeKeyboardNotification()
     }
     
+    func settings() {
+        createBikeCatalog()
+        registerForKeyboardNotifications()
+        getArray()
+        print(NSHomeDirectory())
+        likeFlag.isHidden = true
+        
+        firstPlaceOfPicture()
+        
+        nexBike.addShadow()
+        nexBike.addGradientWithColor(color: .white)
+        nexBike.corner()
+    }
+    
     func firstPlaceOfPicture() {
         image.frame = CGRect(x: CGFloat((containerView.frame.width) / 2 - (image.frame.width / 2)), y: CGFloat((containerView.frame.height) / 2 - (image.frame.height / 2)), width: image.frame.width, height: image.frame.height)
+        image.image = tupleArray[0].0
+        if tupleArray[0].1 != "" {
+            label.text = tupleArray[0].1
+            textField.text = tupleArray[0].1
+        }
     }
     
     func createBikeCatalog() {
-        arrayOfPictures += [UIImage(named: "1.jpg")!, UIImage(named: "2.jpg")!, UIImage(named: "3.jpg")!, UIImage(named: "4.jpg")!, UIImage(named: "5.jpg")!, UIImage(named: "6.jpg")!, UIImage(named: "7.jpg")!, UIImage(named: "8.jpg")!, UIImage(named: "9.jpg")!, UIImage(named: "10.jpg")!, UIImage(named: "11.jpg")!, UIImage(named: "12.jpg")!, UIImage(named: "13.jpg")!, UIImage(named: "14.jpg")!, UIImage(named: "15.jpg")!, UIImage(named: "cat.jpg")!]
-        image.image = arrayOfPictures[number]
+        
+        tupleArray += [(UIImage(named: "1.jpg")!, "", false), (UIImage(named: "2.jpg")!, "", false), (UIImage(named: "3.jpg")!, "", false), (UIImage(named: "4.jpg")!, "", false), (UIImage(named: "5.jpg")!, "", false)]
+        getArray()
+        
+    }
+    
+//    func createBikeCatalog() {
+//        tupleArray += [(UIImage(named: "1.jpg")!, "", false), (UIImage(named: "2.jpg")!, "", false), (UIImage(named: "3.jpg")!, "", false), (UIImage(named: "4.jpg")!, "", false), (UIImage(named: "5.jpg")!, "", false), (UIImage(named: "6.jpg")!, "", false), (UIImage(named: "7.jpg")!, "", false), (UIImage(named: "8.jpg")!, "", false), (UIImage(named: "9.jpg")!, "", false), (UIImage(named: "10.jpg")!, "", false), (UIImage(named: "11.jpg")!, "", false), (U  IImage(named: "12.jpg")!, "", false), (UIImage(named: "13.jpg")!, "", false), (UIImage(named: "14.jpg")!, "", false), (UIImage(named: "15.jpg")!, "", false)]
+//    }
+    
+    func checkComments() {
+        if tupleArray[number].1 != "" {
+            label.text = tupleArray[number].1
+            textField.text = tupleArray[number].1
+            print(tupleArray[number].1)
+        } else {
+            label.text = ""
+            textField.text = ""
+        }
+    }
+    
+    func checkLike() {
+        if tupleArray[number].2 {
+            print("\(tupleArray[number].1) is already like")
+            UILabel.animate(withDuration: 2, delay: 2, options: []) {
+                self.likeFlag.isHidden = false
+            }
+        } else {
+            self.likeFlag.isHidden = true
+        }
     }
     
     @IBAction func actionNextImage(_ sender: Any) {
-                
-        if number == (arrayOfPictures.count - 1) {
-            number = 0
-            print("Поехали сначала!")
-        }
+        writeArray()
         animateUIView()
+        //        if number == (arrayOfPictures.count - 1) {
+        //        if number == (tupleArray.count - 1) {
+        //            number = 0
+        //            print("Поехали сначала!")
+        //        }
+        
     }
     
     func animateUIView() {
@@ -60,7 +110,16 @@ class ViewController: UIViewController {
         } completion: { isFinished in
             // после завершения меняем начинку вьюхи другой картинкой
             self.number += 1
-            self.image.image = self.arrayOfPictures[self.number]
+            
+            if self.number == (self.tupleArray.count) {
+                self.number = 0
+                print("Поехали сначала!")
+            }
+            
+            self.checkComments()
+            self.checkLike()
+            //            self.image.image = self.arrayOfPictures[self.number]
+            self.image.image = self.tupleArray[self.number].0
             //меняем месторасположения картинка (за левую границу экрана)
             self.image.frame = CGRect(x: CGFloat(0 - self.image.frame.width), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
             // перемещаем новую картинку в центр
@@ -68,6 +127,19 @@ class ViewController: UIViewController {
                 self.image.frame = CGRect(x: CGFloat((self.containerView.frame.width) / 2 - (self.image.frame.width / 2)), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
             }
         }
+    }
+    //MARK: - Write & read file
+    func writeArray() {
+        let defaults = UserDefaults.standard
+        defaults.set(tupleArray[number].1, forKey: String(number))
+    }
+    
+    func getArray() {
+        for i in 0..<tupleArray.count {
+            let defaults = UserDefaults.standard
+            tupleArray[i].1 = defaults.value(forKey: String(i)) as! String
+        }
+        print(tupleArray)
     }
     // MARK: -  work with keyboard
     func registerForKeyboardNotifications() {
@@ -79,7 +151,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
     }
-
+    
     
     @objc func kbWillShow(_ notification: Notification) {
         guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
@@ -88,13 +160,36 @@ class ViewController: UIViewController {
         let keyBoardViewEndFrame = view.convert(keyBoardScreenEndFrame, from: view.window)
         print("kbWillShow")
         print(keyBoardViewEndFrame.height)
-//        containerView.frame = CGRect(x: containerView.frame.minX, y: (containerView.frame.minY - keyBoardViewEndFrame.height), width: containerView.frame.width, height: containerView.frame.height)
-        
-        constrainsForContainerVierw.constant -= keyBoardViewEndFrame.height
-        }
+        containerView.transform = CGAffineTransform(translationX: 0, y: -keyBoardViewEndFrame.height)
+    }
     
     @objc func kbWillHide(_ notification: Notification) {
+        containerView.transform = .identity
         print("kbWillHide")
+    }
+    
+    func writeToLabelFromTextField() {
+        if textField.text != nil {
+            tupleArray[number].1 = textField.text!
+            label.text = textField.text!
+        }
+    }
+    
+    @IBAction func actionCloseKeyboard(_ sender: Any) {
+        view.endEditing(true)
+        writeToLabelFromTextField()
+    }
+    
+    @IBAction func actionAddLike(_ sender: Any) {
+        print("makeLike")
+        tupleArray[number].2 = true
+        checkLike()
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("shouldChangeCharactersIn")
+        return true
+    }
+}
