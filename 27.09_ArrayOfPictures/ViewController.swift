@@ -12,18 +12,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nexBike: UIButton!
-    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
-    
     @IBOutlet weak var likeFlag: UILabel!
     
     var number:Int = 0
     var arrayOfPictures: [UIImage] = []
     var arrayOfComents: [String] = []
-    
     var tupleArray: [(picture: UIImage, coment: String, like: Bool)] = []
-    
     let duration = 0.7
     
     override func viewDidLoad() {
@@ -39,12 +35,9 @@ class ViewController: UIViewController {
     func settings() {
         createBikeCatalog()
         registerForKeyboardNotifications()
-        getArray()
         print(NSHomeDirectory())
         likeFlag.isHidden = true
-        
         firstPlaceOfPicture()
-        
         nexBike.addShadow()
         nexBike.addGradientWithColor(color: .white)
         nexBike.corner()
@@ -63,12 +56,7 @@ class ViewController: UIViewController {
         
         tupleArray += [(UIImage(named: "1.jpg")!, "", false), (UIImage(named: "2.jpg")!, "", false), (UIImage(named: "3.jpg")!, "", false), (UIImage(named: "4.jpg")!, "", false), (UIImage(named: "5.jpg")!, "", false)]
         getArray()
-        
     }
-    
-//    func createBikeCatalog() {
-//        tupleArray += [(UIImage(named: "1.jpg")!, "", false), (UIImage(named: "2.jpg")!, "", false), (UIImage(named: "3.jpg")!, "", false), (UIImage(named: "4.jpg")!, "", false), (UIImage(named: "5.jpg")!, "", false), (UIImage(named: "6.jpg")!, "", false), (UIImage(named: "7.jpg")!, "", false), (UIImage(named: "8.jpg")!, "", false), (UIImage(named: "9.jpg")!, "", false), (UIImage(named: "10.jpg")!, "", false), (UIImage(named: "11.jpg")!, "", false), (U  IImage(named: "12.jpg")!, "", false), (UIImage(named: "13.jpg")!, "", false), (UIImage(named: "14.jpg")!, "", false), (UIImage(named: "15.jpg")!, "", false)]
-//    }
     
     func checkComments() {
         if tupleArray[number].1 != "" {
@@ -95,12 +83,12 @@ class ViewController: UIViewController {
     @IBAction func actionNextImage(_ sender: Any) {
         writeArray()
         animateUIView()
-        //        if number == (arrayOfPictures.count - 1) {
-        //        if number == (tupleArray.count - 1) {
-        //            number = 0
-        //            print("Поехали сначала!")
-        //        }
-        
+    }
+    
+    @IBAction func actionAddLike(_ sender: Any) {
+        print("makeLike")
+        tupleArray[number].2 = !tupleArray[number].2
+        checkLike()
     }
     
     func animateUIView() {
@@ -108,9 +96,7 @@ class ViewController: UIViewController {
             // перемещаем картинку за правую границу экрана
             self.image.frame = CGRect(x: CGFloat((self.containerView.frame.width)), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
         } completion: { isFinished in
-            // после завершения меняем начинку вьюхи другой картинкой
             self.number += 1
-            
             if self.number == (self.tupleArray.count) {
                 self.number = 0
                 print("Поехали сначала!")
@@ -118,11 +104,9 @@ class ViewController: UIViewController {
             
             self.checkComments()
             self.checkLike()
-            //            self.image.image = self.arrayOfPictures[self.number]
             self.image.image = self.tupleArray[self.number].0
-            //меняем месторасположения картинка (за левую границу экрана)
             self.image.frame = CGRect(x: CGFloat(0 - self.image.frame.width), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
-            // перемещаем новую картинку в центр
+            
             UIView.animate(withDuration: self.duration, delay: 0, options: .curveEaseOut) {
                 self.image.frame = CGRect(x: CGFloat((self.containerView.frame.width) / 2 - (self.image.frame.width / 2)), y: CGFloat((self.containerView.frame.height) / 2 - (self.image.frame.height / 2)), width: self.image.frame.width, height: self.image.frame.height)
             }
@@ -132,12 +116,14 @@ class ViewController: UIViewController {
     func writeArray() {
         let defaults = UserDefaults.standard
         defaults.set(tupleArray[number].1, forKey: String(number))
+        defaults.set(tupleArray[number].2, forKey: String(number+tupleArray.count))
     }
     
     func getArray() {
         for i in 0..<tupleArray.count {
             let defaults = UserDefaults.standard
             tupleArray[i].1 = defaults.value(forKey: String(i)) as! String
+            tupleArray[i].2 = defaults.value(forKey: String(i+tupleArray.count)) as! Bool
         }
         print(tupleArray)
     }
@@ -151,7 +137,6 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
     }
-    
     
     @objc func kbWillShow(_ notification: Notification) {
         guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
@@ -178,12 +163,6 @@ class ViewController: UIViewController {
     @IBAction func actionCloseKeyboard(_ sender: Any) {
         view.endEditing(true)
         writeToLabelFromTextField()
-    }
-    
-    @IBAction func actionAddLike(_ sender: Any) {
-        print("makeLike")
-        tupleArray[number].2 = true
-        checkLike()
     }
 }
 

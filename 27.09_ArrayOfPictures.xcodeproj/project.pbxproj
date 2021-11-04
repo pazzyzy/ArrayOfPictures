@@ -31,6 +31,8 @@
 		C605A5102705076700138B6A /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C605A5022705076700138B6A /* 11.jpg */; };
 		C605A5112705076700138B6A /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C605A5032705076700138B6A /* 6.jpg */; };
 		C605A5122705076700138B6A /* 13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C605A5042705076700138B6A /* 13.jpg */; };
+		C60D4F9E2730289700F144D6 /* CommentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60D4F9D2730289700F144D6 /* CommentsView.xib */; };
+		C60D4FA0273028DF00F144D6 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D4F9F273028DF00F144D6 /* CommentsView.swift */; };
 		C630D1E62712F3730092D4DA /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C630D1E52712F3730092D4DA /* UIButton+extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		C605A5022705076700138B6A /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 11.jpg; path = Images/11.jpg; sourceTree = SOURCE_ROOT; };
 		C605A5032705076700138B6A /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.jpg; path = Images/6.jpg; sourceTree = SOURCE_ROOT; };
 		C605A5042705076700138B6A /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 13.jpg; path = Images/13.jpg; sourceTree = SOURCE_ROOT; };
+		C60D4F9D2730289700F144D6 /* CommentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsView.xib; sourceTree = "<group>"; };
+		C60D4F9F273028DF00F144D6 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		C630D1E52712F3730092D4DA /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +107,8 @@
 				C605A4DA2704DE4300138B6A /* Assets.xcassets */,
 				C605A4DC2704DE4300138B6A /* LaunchScreen.storyboard */,
 				C605A4DF2704DE4300138B6A /* Info.plist */,
+				C60D4F9D2730289700F144D6 /* CommentsView.xib */,
+				C60D4F9F273028DF00F144D6 /* CommentsView.swift */,
 			);
 			path = 27.09_ArrayOfPictures;
 			sourceTree = "<group>";
@@ -207,6 +213,7 @@
 				C605A5052705076700138B6A /* 14.jpg in Resources */,
 				C605A5062705076700138B6A /* 5.jpg in Resources */,
 				C605A4EC2705023700138B6A /* 1.jpg in Resources */,
+				C60D4F9E2730289700F144D6 /* CommentsView.xib in Resources */,
 				C605A4F42705057A00138B6A /* homer_thinking.jpg in Resources */,
 				C605A50E2705076700138B6A /* 7.jpg in Resources */,
 				C605A50B2705076700138B6A /* 9.jpg in Resources */,
@@ -230,6 +237,7 @@
 			files = (
 				C605A4D62704DE4100138B6A /* ViewController.swift in Sources */,
 				C630D1E62712F3730092D4DA /* UIButton+extension.swift in Sources */,
+				C60D4FA0273028DF00F144D6 /* CommentsView.swift in Sources */,
 				C605A4D22704DE4100138B6A /* AppDelegate.swift in Sources */,
 				C605A4D42704DE4100138B6A /* SceneDelegate.swift in Sources */,
 			);
